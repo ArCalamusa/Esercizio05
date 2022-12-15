@@ -1,0 +1,84 @@
+h1 {
+  text-align: center;
+  
+}
+.container {
+  position: absolute; /* centra al centro della pagina */
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  border: 1px solid black;
+  font-size: 0;   /* toglie lo spazio tra i div */
+} 
+
+.row div {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  background-color: #b09069;
+}
+/* div dispari nelle righe pari */
+.row:nth-child(2n) div:nth-child(2n+1),
+
+/* div dispari nelle righe pari */
+.row:nth-child(2n+1) div:nth-child(2n) {
+  background-color: black;
+}
+
+.row div:hover {
+  background-color: red !important;
+}
+
+.row div {
+  position: relative;
+}
+.row div span {
+  position: absolute;
+  font-size: 1rem;
+}
+/* primo span in TUTTI i div della prima riga */
+.row:first-of-type div span:first-of-type {
+  left: 19px;
+  top: -20px;
+}
+
+/* secondo span in TUTTI i div della prima riga */
+.row:first-of-type div:first-of-type span:nth-child(2) {
+  top: 19px;
+  left: -20px;
+}
+
+/* secondo span nell'ultimo div della prima riga */
+.row:first-of-type div:last-of-type span:nth-child(2) {
+  top: 19px;
+  right: -20px;
+}
+
+/* primo span div in tutte le righe tranne la prima e l'ultima */
+.row:not(:first-of-type):not(:last-of-type) div:first-of-type span {
+  top: 19px;
+  left: -20px;
+}
+/* ultimo div span in tutte le righe tranne la prima e l'ultima */
+.row:not(:first-of-type):not(:last-of-type) div:last-of-type span {
+  top: 19px;
+  right: -20px;
+}
+
+/* il secondo span di tutti i div nell'ultima riga */
+.row:last-of-type div span:nth-child(1) {
+  bottom: -20px;
+  left: 19px;
+}
+
+/* il secondo span del primo div nell'ultima riga */
+.row:last-of-type div:first-of-type span:nth-child(2) {
+  top: 19px;
+  left: -20px;
+}
+/* il secondo span dell'ultimo div nell'ultima riga */
+.row:last-of-type div:last-of-type span:nth-child(2) {
+  top: 19px;
+  right: -20px;
+}
